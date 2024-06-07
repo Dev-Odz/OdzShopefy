@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 class ProductServices {
   Future<List<dynamic>> getAllProducts() async {
     try {
-      var url = Uri.http('fakestoreapi.com', '/products');
+      var url = Uri.https('fakestoreapi.com', '/products');
 
       // API REQUEST
       var response = await http.get(
@@ -28,7 +28,7 @@ class ProductServices {
   Future<Map<String, dynamic>> getProduct({required int? productId}) async {
     try {
       var url =
-          Uri.http('fakestoreapi.com', '/products/${productId.toString()}');
+          Uri.https('fakestoreapi.com', '/products/${productId.toString()}');
 
       // API REQUEST
       var response = await http.get(
